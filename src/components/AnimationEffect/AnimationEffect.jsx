@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./AnimationEffect.css";
 
-const colors = ["#ffbe09"];
+const colors = ["#ffffff"];
 
 const AnimationEffect = () => {
     const [circles, setCircles] = useState([]);
@@ -10,8 +10,8 @@ const AnimationEffect = () => {
     const animateCircle = (event) => {
         const newCircle = {
             id: Date.now(),
-            x: Math.min(window.innerWidth , Math.max(0, event.clientX - 50 )),  
-            y: Math.min(window.innerHeight , Math.max(0, event.clientY - 50)), 
+            x: Math.min(window.innerWidth , Math.max(0, event.clientX - 10 )),  
+            y: Math.min(window.innerHeight , Math.max(0, event.clientY - 10)), 
             color: colors,
             gradient: `radial-gradient(circle, ${colors[0]}, #ffbd0913)`,
         };
@@ -21,7 +21,7 @@ const AnimationEffect = () => {
         // Remove the circle after the animation (0.5s + small buffer)
         setTimeout(() => {
             setCircles((prevCircles) => prevCircles.filter(circle => circle.id !== newCircle.id));
-          }, 2000);// 500ms animation + 100ms buffer
+          }, 40000);// 500ms animation + 100ms buffer
     };
 
     useEffect(() => {
