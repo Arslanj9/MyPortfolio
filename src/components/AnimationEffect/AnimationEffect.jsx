@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./AnimationEffect.css";
 
-const colors = ["#ebc800"];
+const colors = ["#ffbe09"];
 
 const AnimationEffect = () => {
     const [circles, setCircles] = useState([]);
@@ -10,9 +10,10 @@ const AnimationEffect = () => {
     const animateCircle = (event) => {
         const newCircle = {
             id: Date.now(),
-            x: Math.min(window.innerWidth - 40, Math.max(0, event.clientX - 50 )),  // Constrain X within viewport
-            y: Math.min(window.innerHeight - 40, Math.max(0, event.clientY - 50)), // Constrain Y within viewport
+            x: Math.min(window.innerWidth , Math.max(0, event.clientX - 50 )),  
+            y: Math.min(window.innerHeight , Math.max(0, event.clientY - 50)), 
             color: colors,
+            gradient: `radial-gradient(circle, ${colors[0]}, #ffbd0913)`,
         };
 
         setCircles((prevCircles) => [...prevCircles, newCircle]);
@@ -20,7 +21,7 @@ const AnimationEffect = () => {
         // Remove the circle after the animation (0.5s + small buffer)
         setTimeout(() => {
             setCircles((prevCircles) => prevCircles.filter(circle => circle.id !== newCircle.id));
-          }, 1900);// 500ms animation + 100ms buffer
+          }, 2000);// 500ms animation + 100ms buffer
     };
 
     useEffect(() => {
@@ -41,7 +42,7 @@ const AnimationEffect = () => {
                     style={{
                         left: `${circle.x}px`,
                         top: `${circle.y}px`,
-                        backgroundColor: circle.color,  // Set background color for each circle
+                        background: `radial-gradient(circle, ${circle.color}, #ffbd0913)`, // Circular gradient with transparency
                     }}
                 ></div>
             ))}

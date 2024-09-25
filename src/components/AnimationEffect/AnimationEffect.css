@@ -8,9 +8,8 @@ body {
     position: absolute;
     width: 900px;
     height: 900px;
-    border-radius: 50%; /* Fully circular shape */
+    border-radius: 50%; 
     transition: all 0.9s linear;
-    opacity: 0.8;
     z-index: 1;
   }
   
@@ -20,13 +19,13 @@ body {
   
   @keyframes expandAndFade {
     0% {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       opacity: 0.01;
     }
     100% {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       opacity: 0;
       transform: translate(0px, 0px);
     }
