@@ -11,13 +11,13 @@ const Header = () => {
 
                 <h1 className="text-xl font-medium text-sky-300">Full Stack Developer</h1>
 
-                <p className="text-[0.65rem] text-sky-300 mt-3 ">
+                <p className="text-[0.65rem] text-sky-300 mt-3 text-opacity-70">
                     I specialize in MERN stack development, building responsive web applications
                     using MongoDB, Express.js, React, and Node.js.
                 </p>
 
 
-                <Button link="https://example.com" text="Get In Touch" />
+                <Button link="https://example.com" text="Get In Touch"/>
             </div>
         </header>
     )
